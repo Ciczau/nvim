@@ -29,11 +29,11 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
+        -- Make sure to install prettierd, it has to be down manual for now :(
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
                 "eslint",
-                "prettier",
                 "ts_ls",
                 "volar",
                 "gopls",
