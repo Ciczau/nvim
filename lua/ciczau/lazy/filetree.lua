@@ -21,19 +21,17 @@ return {
             disable_netrw = true,
         })
 
-        vim.api.nvim_create_autocmd("BufEnter", {
-            callback = function()
-                local bufname = vim.api.nvim_buf_get_name(0)
-                local filetype = vim.bo.filetype
-                if filetype ~= "NvimTree" and bufname ~= "" then
-                    vim.cmd("NvimTreeToggle")
-                end
-            end,
-        })
-
         vim.keymap.set("n", "<leader>pv", function()
-            vim.cmd("NvimTreeToggle")
-            vim.cmd("only")
+            local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+            local current_filetype = vim.bo.filetype
+            if #buffers == 1 and current_filetype ~= "NvimTree" then
+                vim.cmd("q")
+                vim.cmd("NvimTreeOpen")
+            elseif current_filetype ~= "NvimTree" then
+                vim.cmd("q")
+            else
+                vim.cmd("NvimTreeToggle")
+            end
         end, { noremap = true, silent = true })
     end
 }
