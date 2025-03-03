@@ -7,5 +7,5 @@
 - install `deno` and `make`
 - clone repo in ur ~/.config/nvim directory
 - open your nvim
-- run `:MasonInstall prettier prettierd`
+- run `:MasonInstall prettier prettierd goimports`
 - enjoy

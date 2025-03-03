@@ -10,6 +10,7 @@ return {
                 typescript = { "prettierd" },
                 vue = { "prettierd" },
                 css = { "prettierd" },
+                go = { "goimports" },
             },
             format_on_save = {
                 lsp_fallback = true,
