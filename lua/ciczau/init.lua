@@ -14,7 +14,7 @@ function R(name)
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.css", "*.scss", "*.vue" },
+    pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.vue" },
     callback = function()
         vim.cmd("EslintFixAll")
     end,
