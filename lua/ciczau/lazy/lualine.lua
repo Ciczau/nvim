@@ -106,7 +106,7 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = 'gruvbox',
+                theme = 'tokyonight-night',
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
                 disabled_filetypes = {
@@ -136,7 +136,8 @@ return {
                                 elseif gs ~= 'm' then
                                     return { fg = '#769945' }
                                 end
-                            end
+                            end,
+                        separator = { right = '' }
                     },
                     {
                         "vim.b.git_state[1]",
@@ -145,21 +146,25 @@ return {
                                 return { fg = '#F49B55' }
                             end
                         end,
-                        padding = { left = 0, right = 0 }
+                        padding = { left = 0, right = 0 },
+                        separator = { right = '' },
                     },
                     {
                         "vim.b.git_state[2]",
                         color = { fg = '#769945' },
-                        padding = { left = 0, right = 1 }
+                        padding = { left = 0, right = 1 },
+                        separator = { right = '' }
                     },
                     {
                         "vim.b.git_state[3]",
                         color = { fg = '#D75F00' },
-                        padding = { left = 0, right = 1 }
+                        padding = { left = 0, right = 1 },
+                        separator = { right = '' }
                     },
                     {
                         "vim.b.git_state[4]",
                         color = { fg = '#D99809' },
+                        separator = { right = '' },
                         padding = { left = 0, right = 1 }
                     },
                 },
@@ -181,6 +186,5 @@ return {
             inactive_winbar = {},
             extensions = {}
         }
-        vim.cmd.colorscheme("tokyonight-night")
     end,
 }
