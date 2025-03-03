@@ -4,7 +4,6 @@ return {
     config = function()
         local conform = require("conform")
 
-        -- Setup "conform.nvim" to work
         conform.setup({
             formatters_by_ft = {
                 json = { "prettierd" },
@@ -29,12 +28,5 @@ return {
                 })
             end,
         })
-        vim.keymap.set({ "n", "v" }, "<leader>l", function()
-            conform.format({
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 500,
-            })
-        end, { desc = "Format file or range (in visual mode)" })
     end,
 }

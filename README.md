@@ -4,6 +4,7 @@
 
 #### How to use
 - make sure u have nvim 0.10+
+- install `deno` and `make`
 - clone repo in ur ~/.config/nvim directory
 - open your nvim
 - run `:MasonInstall prettier prettierd`
