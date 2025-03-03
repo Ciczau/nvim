@@ -3,6 +3,11 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         require("nvim-tree").setup({
+            actions = {
+                open_file = {
+                    quit_on_open = true
+                }
+            },
             view = {
                 width = 35,
                 side = "right",
@@ -22,15 +27,11 @@ return {
         })
 
         vim.keymap.set("n", "<leader>pv", function()
-            local buffers = vim.fn.getbufinfo({ buflisted = 1 })
             local current_filetype = vim.bo.filetype
-            if #buffers == 1 and current_filetype ~= "NvimTree" then
-                vim.cmd("q")
-                vim.cmd("NvimTreeOpen")
-            elseif current_filetype ~= "NvimTree" then
-                vim.cmd("q")
-            else
+            if current_filetype ~= "NvimTree" then
+                vim.cmd("bdelete")
                 vim.cmd("NvimTreeToggle")
+                vim.cmd("only")
             end
         end, { noremap = true, silent = true })
     end
