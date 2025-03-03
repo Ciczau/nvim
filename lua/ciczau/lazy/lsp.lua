@@ -60,6 +60,23 @@ return {
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
                 end,
+                ["stylelint_lsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.stylelint_lsp.setup({
+                        settings = {
+                            stylelintplus = {
+                                autoFixOnFormat = true,
+                                autoFixOnSave = true,
+                                validateOnSave = true,
+                                validateOnType = true,
+                                validateOnInsert = true,
+                                validateOnDocumentOpen = true,
+                                validateOnDocumentSave = true,
+                                validateOnDocumentChange = true,
+                            },
+                        }
+                    })
+                end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {

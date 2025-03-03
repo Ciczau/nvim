@@ -10,6 +10,7 @@ return {
                 json = { "prettierd" },
                 typescript = { "prettierd" },
                 vue = { "prettierd" },
+                css = { "prettierd" },
             },
             format_on_save = {
                 lsp_fallback = true,
@@ -19,7 +20,7 @@ return {
         })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = { "*.json", "*.lua", "*.ts", "*.vue" },
+            pattern = { "*.json", "*.lua", "*.ts", "*.vue", "*.css", "*.scss" },
             callback = function()
                 conform.format({
                     lsp_fallback = true,
