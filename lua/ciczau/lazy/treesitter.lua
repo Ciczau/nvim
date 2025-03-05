@@ -4,8 +4,8 @@ return {
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
-                "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash", "vue",
+                "vimdoc", "javascript", "typescript", "c", "lua", "go",
+                "jsdoc", "bash", "vue", "css", "scss",
             },
 
             sync_install = false,
