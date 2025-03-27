@@ -33,6 +33,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "d", "\"_d")
 vim.keymap.set({ "n", "v" }, "dd", "\"_dd")
+vim.keymap.set({ "n", "v" }, "x", "\"_x")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 

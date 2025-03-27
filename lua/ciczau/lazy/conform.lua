@@ -11,6 +11,7 @@ return {
                 vue = { "prettierd" },
                 css = { "prettierd" },
                 go = { "goimports" },
+                html = { "prettierd" },
             },
             format_on_save = {
                 lsp_fallback = true,
@@ -20,7 +21,7 @@ return {
         })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = { "*.json", "*.lua", "*.ts", "*.vue", "*.css", "*.scss" },
+            pattern = { "*.json", "*.lua", "*.ts", "*.vue", "*.css", "*.scss", "*.html" },
             callback = function()
                 conform.format({
                     lsp_fallback = true,

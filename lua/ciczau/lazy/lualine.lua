@@ -168,7 +168,7 @@ return {
                         padding = { left = 0, right = 1 }
                     },
                 },
-                lualine_c = { 'filename' },
+                lualine_c = { { 'filename', path = 1 } },
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
                 lualine_y = { { 'progress', separator = { left = '' } } },
                 lualine_z = { { 'location', separator = { left = '' } } }
