@@ -8,7 +8,20 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-c>"] = function(prompt_bufnr)
+                            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+                        end,
+                    },
+                    n = {
+                        ["<C-c>"] = require('telescope.actions').close
+                    }
+                }
+            },
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})

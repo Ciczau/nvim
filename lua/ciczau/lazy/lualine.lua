@@ -174,7 +174,7 @@ return {
                 lualine_z = { { 'location', separator = { left = '' } } }
             },
             inactive_sections = {
-                lualine_a = {},
+                lualine_a = { { 'mode', separator = { right = '' } } },
                 lualine_b = { { 'branch', 'diff', 'diagnostics', 'status' } },
                 lualine_c = { 'filename' },
                 lualine_x = { 'location' },
