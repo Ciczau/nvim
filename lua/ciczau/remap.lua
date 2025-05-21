@@ -12,6 +12,10 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
+vim.keymap.set('n', '<leader>e', function()
+    vim.diagnostic.open_float(nil, { focusable = false, border = "rounded" })
+end)
+
 vim.keymap.set("n", "<leader>-", function()
     vim.cmd("Ex")
 end)
