@@ -12,6 +12,7 @@ return {
                 css = { "prettierd" },
                 go = { "goimports" },
                 html = { "prettierd" },
+                python = { "black", "isort" },
             },
             format_on_save = {
                 lsp_fallback = true,
@@ -21,7 +22,7 @@ return {
         })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = { "*.json", "*.lua", "*.ts", "*.vue", "*.css", "*.scss", "*.html" },
+            pattern = { "*.json", "*.lua", "*.ts", "*.vue", "*.css", "*.scss", "*.html", "*.py" },
             callback = function()
                 conform.format({
                     lsp_fallback = true,
