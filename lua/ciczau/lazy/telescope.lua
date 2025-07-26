@@ -10,6 +10,7 @@ return {
     config = function()
         require('telescope').setup({
             defaults = {
+                file_ignore_patterns = { "%.git/", "^.git/" },
                 mappings = {
                     i = {
                         ["<C-c>"] = function(prompt_bufnr)
@@ -27,7 +28,7 @@ return {
                 },
                 live_grep = {
                     additional_args = function(opts)
-                        return { "--hidden" }
+                        return { "--hidden", "--fixed-strings" }
                     end,
                 },
             },

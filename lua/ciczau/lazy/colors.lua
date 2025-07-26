@@ -14,8 +14,11 @@ return {
         priority = 1000,
         config = function()
             require("tokyonight").setup({
+                transparent = true,
                 styles = {
-                    keywords = { italic = false }
+                    floats = "transparent",
+                    sidebars = "transparent",
+                    keywords = { italic = false },
                 }
             })
             ColorMyPencils()
