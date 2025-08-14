@@ -1,6 +1,7 @@
 require("ciczau.set")
 require("ciczau.remap")
 require("ciczau.lazy_init")
+require("ciczau.lsp.index")
 
 
 local augroup = vim.api.nvim_create_augroup
